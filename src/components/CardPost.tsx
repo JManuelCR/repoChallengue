@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import heart from "../assets/icons/like-heart-reaction.svg";
 import unicorn from "../assets/icons/unicorn-Icon.svg";
 import crazy from "../assets/icons/crazy-Man-Icon.svg";
@@ -45,7 +46,7 @@ export interface Props {
   handsReactions: number;
   fireReactions: number;
   marks: number;
-  comments: number;
+  comments: [];
   time: number;
   content: string;
   userCreatorId: {

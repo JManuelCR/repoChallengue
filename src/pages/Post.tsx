@@ -1,4 +1,10 @@
-import { Props as ObjectModel } from "../components/CardPost";
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable @typescript-eslint/restrict-template-expressions */
+/* eslint-disable @typescript-eslint/no-unsafe-call */
+/* eslint-disable @typescript-eslint/no-unsafe-argument */
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import { discussAndWhatercoller } from "../data/discussAndWatercoller";
 import AsideLeftCard from "../components/AsideLeftCard";
 import commentIcon from "../assets/icons/comments-count-aside.svg";
@@ -11,12 +17,8 @@ import unicorn from "../assets/icons/unicorn-Icon.svg";
 import crazy from "../assets/icons/crazy-Man-Icon.svg";
 import hands from "../assets/icons/raise-.svg";
 import fire from "../assets/icons/fire-Icon.svg";
-import commentsIcon from "../assets/icons/comments-count.svg";
-import markPost from "../assets/icons/save-No-Background-Icon.svg";
 import { Icons } from "../components/CardPost";
 import edit from "../assets/icons/three-Dots-Icon.svg"
-
-import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 
@@ -73,7 +75,6 @@ console.log(post);
   const tags = post.tags;
   const reactions = [post.fireReactions, post.handsReactions, post.crazyReactions, post.unicornReactions, post.heartReactions ];
   const comments = post.comments;
-  const time = post.time;
   const content = post.content;
   const marks = post.marks;
 

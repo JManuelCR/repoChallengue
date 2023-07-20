@@ -1,10 +1,11 @@
+/* eslint-disable @typescript-eslint/no-unsafe-argument */
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+/* eslint-disable @typescript-eslint/no-misused-promises */
 import { buttonsLogin } from "../data/buttonsLogin";
-import { Link } from "react-router-dom";
 import LoginButtonNetwork from "../components/LoginButtonNetwork";
 import Footer from "../components/Footter";
 import Navbar from "../components/Navbar";
 import { ToastContainer, toast } from "react-toastify";
-import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { Login, User } from "../types/commont.types";
 
@@ -12,10 +13,7 @@ export default function Login() {
   const {
     register,
     handleSubmit,
-    reset,
-    formState: { errors },
   } = useForm<User>();
-  const navigate = useNavigate();
 
   function onSubmit(data: Login) {
     fetch("http://localhost:8080/auth", {

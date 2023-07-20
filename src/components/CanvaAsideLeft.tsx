@@ -14,7 +14,7 @@ export default function CanvaAsideLeft () {
        <>
        <ul>
        {assideOptions
-         .filter((item, index, arr) => index < 13)
+         .filter((_item, index) => index < 13)
          .map((item, index) => {
            return (
              <a href="">
@@ -43,7 +43,7 @@ export default function CanvaAsideLeft () {
        <h2 className="font-bold text-[#404040] p-2 text-4 ps-3">Other</h2>
        <ul>
          {assideOptions
-           .filter((item, index, arr) => index > 12)
+           .filter((_item, index) => index > 12)
            .map((item, index) => {
              return (
                <a href="">

@@ -1,11 +1,15 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+/* eslint-disable @typescript-eslint/no-misused-promises */
 import { buttonsSignUp } from "../data/buttonsSignUp";
 import { useForm } from "react-hook-form";
 import LoginButtonNetwork from "../components/LoginButtonNetwork";
 import Footer from "../components/Footter";
 import Navbar from "../components/Navbar";
 import { User } from "../types/commont.types";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import { Link, useNavigate } from "react-router-dom";
+
 
 export default function SignUp() {
   const {

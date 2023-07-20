@@ -1,3 +1,7 @@
+/* eslint-disable @typescript-eslint/no-misused-promises */
+/* eslint-disable @typescript-eslint/restrict-template-expressions */
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import { Link } from "react-router-dom";
 import devtoIcon from "../assets/img/devto-icon.png";
 import { useState } from "react";
@@ -11,16 +15,9 @@ export default function CeratePost() {
   const {
     register,
     handleSubmit,
-    formState: { errors },
   } = useForm<ContentInfo>();
   const [clipboardText, setClipboardText] = useState("");
   const [inputValue, setInputValue] = useState("");
-  const [heartReactions, setHeartReactions] = useState(0);
-  const [unicornReactions, setUnicornReactions] = useState(0);
-  const [crazyReactions, setCrazyReactions] = useState(0);
-  const [handsReactions, setHandsReactions] = useState(0);
-  const [fireReactions, setFireReactions] = useState(0);
-  const [tagsCount, setTagsCount] = useState();
   const [tagsTo, setTags] = useState<Tags[]>([]);
   const [tag, setTag] = useState("");
   const currentDate = new Date();
@@ -93,7 +90,7 @@ export default function CeratePost() {
         marks: marks
       }),
     })
-      .then((response) => {
+      .then(() => {
         setTimeout(() => {
           window.location.href = "/";
         }, 1000);

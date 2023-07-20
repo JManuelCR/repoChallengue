@@ -1,38 +1,15 @@
+/* eslint-disable @typescript-eslint/no-unsafe-argument */
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import Navbar from "../components/Navbar";
 import Footter from "../components/Footter";
 import AsideLeft from "../components/AsideLeft";
 import CardPost from "../components/CardPost";
-import { Props as ContentInfo } from "../components/CardPost"
 import AsideRight from "../components/AsideRight";
 import { useState, useEffect } from "react";
 import { ToastContainer, toast } from "react-toastify";
 
-const cards:ContentInfo [] = [
-    {
-        image: 'https://res.cloudinary.com/practicaldev/image/fetch/s--F8vXLM34--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/8i3shhdfjhswxr3dmfyb.jpeg',
-        date: new Date,
-        title: "Is the AI Hype Over? OpenAI's ChatGPT Code Interpreter Takes Center Stage",
-        tags: [
-            'devto',
-            'devto',
-            'devto',
-            'devto',
-            'devto',
-            'devto',
-          ],
-          heartReactions: 10,
-          marks: 2,
-        comments: 5,
-        time: 25,
-        content: 'jkjsdñlkjflskjf',
-        userCreatorId: {
-          name: "manuel",
-          profilePicture:"https://avatars.githubusercontent.com/u/45635600?v=4",
-          _id: "asdfasfd"
-        },
-        _id:'kjsdañlfkj',
-    },
-]
+
 export default function Home() {
   const [posts, setPosts] = useState([]);
 

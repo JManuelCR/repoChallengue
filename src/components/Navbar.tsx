@@ -1,3 +1,7 @@
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+/* eslint-disable @typescript-eslint/no-unsafe-argument */
+/* eslint-disable @typescript-eslint/restrict-template-expressions */
 import devtoIcon from "../assets/img/devto-icon.png";
 import searchLoupe from "../assets/icons/loupe-Icon.svg";
 import notifications from "../assets/icons/belt-icon.svg";
@@ -7,13 +11,17 @@ import { useEffect, useState } from "react";
 import CanvaAsideLeft from "./CanvaAsideLeft";
 import Close from "../assets/icons/x-Close-Icon.svg";
 import { ToastContainer, toast } from "react-toastify";
+interface User {
+  name: string;
+  profilePicture: string;
+}
 
 const token = localStorage.getItem("token");
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [canvaIsOpen, setCanvaIsOpen] = useState(false);
-  const [userToShow, setUser] = useState([])
+  const [userToShow, setUser] = useState<User>()
   const userEmail = localStorage.getItem("email");
 
   function logOut() {
@@ -37,10 +45,9 @@ export default function Navbar() {
   };
 
   useEffect(() => {
-    const handleClickOutside = (event: {
-      target: { closest: (arg0: string) => any };
-    }) => {
-      if (isOpen && !event.target.closest(".dropdown")) {
+    const handleClickOutside = (event: MouseEvent) => {
+      const targetElement = event.target as HTMLElement; // Explicitly cast event.target to HTMLElement
+      if (isOpen && !targetElement.closest(".dropdown")) { // Add the correct type for closest
         setIsOpen(false);
       }
     };
@@ -51,7 +58,7 @@ export default function Navbar() {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, [isOpen]);
-
+  
   useEffect(() => {
     fetch(`http://localhost:8080/name/${userEmail}`)
     .then(res => res.json())
@@ -62,7 +69,6 @@ export default function Navbar() {
       toast.error("No hay datos de usuario")
     })
   })
-  console.log(userToShow);
   return (
     <>
       <nav className="w-full h-[56px] bg-[#fff] flex items-center">
